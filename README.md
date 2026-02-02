@@ -103,7 +103,7 @@ lms-SpringBoot-react/
 
 ### Clone Repository
 <pre style="background-color:#111; color:#fff; padding:10px;">
-git clone https://github.com/&lt;your-username&gt;/lms-SpringBoot-react.git
+git clone https://github.com/Teegalasaketh/lms-SpringBoot-react.git
 cd lms-SpringBoot-react
 </pre>
 
