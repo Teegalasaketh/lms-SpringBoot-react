@@ -30,7 +30,7 @@ This system allows **Admins** to manage books and **Students** to view, issue, a
 ## 📁 Project Structure
 
 <pre style="background-color:#111; color:#fff; padding:15px;">
-SUB1_2025/
+lms-SpringBoot-react/
 │
 ├── lms-frontend/
 │   ├── public/
@@ -103,8 +103,8 @@ SUB1_2025/
 
 ### Clone Repository
 <pre style="background-color:#111; color:#fff; padding:10px;">
-git clone https://github.com/&lt;your-username&gt;/SUB1_2025.git
-cd SUB1_2025
+git clone https://github.com/&lt;your-username&gt;/lms-SpringBoot-react.git
+cd lms-SpringBoot-react
 </pre>
 
 ---
