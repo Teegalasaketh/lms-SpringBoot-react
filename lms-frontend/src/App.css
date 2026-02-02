@@ -1,0 +1,393 @@
+ /* // App.css */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* NAVBAR */
+.navbar {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s, border-color 0.4s;
+}
+
+.navbar.scrolled {
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand {
+  color: var(--brand-color) !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* GLASS CARD */
+.glass {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glass:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px var(--glow-color);
+}
+
+/* BRAND BUTTON */
+.btn-brand {
+  background: transparent;
+  border: 2px solid #ccc;
+  font-weight: bold;
+  background-image: linear-gradient(90deg,#E50914,#444,#000);
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .btn-brand {
+  background-image: linear-gradient(90deg,#A11620,#ccc,#fff);
+}
+
+/* TABLE */
+.table tbody tr:hover {
+  background: rgba(229,9,20,0.05);
+}
+
+/* ============================= */
+/* GLASS TABLE – LIGHT MODE      */
+/* ============================= */
+
+.glass-table {
+  background: transparent;
+  color: var(--text-color);
+}
+
+.glass-table thead {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.glass-table thead th {
+  color: #111;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.glass-table tbody td {
+  color: #111;
+  border-color: var(--border-color);
+}
+
+.glass-table tbody tr:hover {
+  background: rgba(229, 9, 20, 0.06); /* brand red hover */
+}
+
+/* ============================= */
+/* GLASS TABLE – DARK MODE       */
+/* ============================= */
+
+body.dark-mode .glass-table {
+  background: transparent;
+  color: #e0e0e0;
+}
+
+body.dark-mode .glass-table thead {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .glass-table thead th {
+  color: #ffffff;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .glass-table tbody td {
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+body.dark-mode .glass-table tbody tr:hover {
+  background: rgba(229, 9, 20, 0.12); /* stronger hover in dark */
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent !important;
+}
+
+/* =========================================
+   🔘 UNIVERSAL BRAND BUTTON (IMAGE MATCH)
+   ========================================= */
+
+.btn-brand,
+.btn-glass {
+  background-color: transparent !important;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  /* ---- GRADIENT TEXT (LIGHT MODE) ---- */
+  background-image: linear-gradient(
+    90deg,
+    #E50914 0%,
+    #444 50%,
+    #000 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hover effect */
+.btn-brand:hover,
+.btn-glass:hover {
+  background-color: rgba(229, 9, 20, 0.08) !important;
+  border-color: #E50914;
+  box-shadow: 0 6px 18px rgba(229, 9, 20, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   🌙 DARK MODE BUTTON OVERRIDE
+   =============================== */
+
+body.dark-mode .btn-brand,
+body.dark-mode .btn-glass {
+  border-color: #555;
+
+  background-image: linear-gradient(
+    90deg,
+    #A11620 0%,
+    #ccc 50%,
+    #fff 100%
+  );
+}
+
+body.dark-mode .btn-brand:hover,
+body.dark-mode .btn-glass:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: #fff;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ===============================
+   ❌ REMOVE BOOTSTRAP COLORS
+   =============================== */
+
+.btn-primary,
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-secondary {
+  background: transparent !important;
+  border-color: var(--border-color) !important;
+  color: inherit !important;
+}
+
+
+/* =========================================
+   MAIN HEADING STYLE (NO UNDERLINE VERSION)
+   ========================================= */
+
+.heading-no-underline {
+  /* SAME gradient as main heading */
+  --pt-grad-1: #E50914;
+  --pt-grad-2: #444;
+  --pt-grad-3: #000;
+
+  display: inline-block;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.1em 0.35em;
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+
+  background: linear-gradient(
+    90deg,
+    var(--pt-grad-1) 0%,
+    var(--pt-grad-2) 50%,
+    var(--pt-grad-3) 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode .heading-no-underline {
+  --pt-grad-1: #A11620;
+  --pt-grad-2: #ccc;
+  --pt-grad-3: #fff;
+}
+
+
+/* =========================================
+   🧭 ADMIN DASHBOARD BUTTONS (GLASS)
+   ========================================= */
+
+.dashboard-btn {
+  min-width: 180px;
+  padding: 12px 18px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 14px;
+  border: 2px solid var(--border-color);
+  transition: all 0.25s ease;
+
+  background: transparent;
+
+  /* GRADIENT TEXT */
+  background-image: linear-gradient(
+    90deg,
+    #E50914 0%,
+    #444 50%,
+    #000 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Hover */
+.dashboard-btn:hover {
+  border-color: #E50914;
+  box-shadow: 0 10px 24px rgba(229, 9, 20, 0.3);
+  transform: translateY(-2px);
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode .dashboard-btn {
+  background-image: linear-gradient(
+    90deg,
+    #A11620 0%,
+    #ccc 50%,
+    #fff 100%
+  );
+}
+
+/* =========================================
+   📌 STATUS BADGES (GLASS)
+   ========================================= */
+
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 193, 7, 0.15);
+  color: #856404;
+}
+
+.status-badge.warning {
+  background: rgba(255, 193, 7, 0.2);
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode .status-badge {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffd65c;
+  border-color: #444;
+}
+
+/* =========================================
+   📭 EMPTY TABLE STATE (DARK + LIGHT)
+   ========================================= */
+
+/* Light mode */
+.glass-table .text-muted {
+  color: #6c757d !important;
+  font-weight: 500;
+}
+
+/* Dark mode */
+body.dark-mode .glass-table .text-muted {
+  color: #b5b5b5 !important;
+}
+
+body.dark-mode .glass-table .text-muted {
+  color: #d1d1d1;
+  font-style: italic;
+}
+
+/* =========================================
+   📘 SUB HEADING (NO UNDERLINE)
+   ========================================= */
+
+.sub-heading {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+
+  /* Gradient text */
+  background-image: linear-gradient(
+    90deg,
+    #E50914 0%,
+    #666 60%,
+    #000 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode .sub-heading {
+  background-image: linear-gradient(
+    90deg,
+    #A11620 0%,
+    #ccc 60%,
+    #fff 100%
+  );
+}
+
+
